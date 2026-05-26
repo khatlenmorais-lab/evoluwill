@@ -514,8 +514,17 @@
     border: 1px solid rgba(249,115,22,.3);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
-    font-size: 4rem;
     animation: float 3s ease-in-out infinite;
+  }
+  .drone-center-img {
+    width: 130px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(249, 115, 22, 0.4));
+    animation: spinSlow 8s linear infinite;
+  }
+  @keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
   }
   @keyframes float {
     0%,100%{ transform: translateY(0); }
@@ -1094,7 +1103,7 @@
     <div class="drone-3d-wrapper">
       <div class="drone-orbit"></div>
       <div class="drone-orbit"></div>
-      <div class="drone-center">🚁</div>
+      <div class="drone-center"><img src="images/drone-real.png" alt="Drone" class="drone-center-img"></div>
     </div>
   </div>
   <div>
