@@ -1576,6 +1576,20 @@ const moduleObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 const moduleList = document.querySelector('.module-list');
 if(moduleList) moduleObs.observe(moduleList);
+
+// ── FOOTER STAGGER ──
+const footerObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if(e.isIntersecting){
+      const items = document.querySelectorAll('footer > .reveal');
+      items.forEach((el, i) => {
+        setTimeout(() => el.classList.add('visible'), i * 200);
+      });
+    }
+  });
+}, { threshold: 0.3 });
+const footerEl = document.querySelector('footer');
+if(footerEl) footerObs.observe(footerEl);
 </script>
 </body>
 </html>
