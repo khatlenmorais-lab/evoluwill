@@ -66,35 +66,38 @@
     position: fixed;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.1;
-    filter: drop-shadow(0 0 60px rgba(249, 115, 22, 0.2));
-    will-change: transform;
+    opacity: 0.2;
+    filter: drop-shadow(0 0 60px rgba(249, 115, 22, 0.25));
   }
   #drone-bg-1 {
     width: 260px;
-    top: 8%;
-    left: 5%;
-    animation: floatDrone1 20s ease-in-out infinite;
+    top: 5%;
+    animation: flyDrone1 30s linear infinite;
   }
   #drone-bg-2 {
     width: 180px;
-    bottom: 10%;
-    right: 8%;
-    animation: floatDrone2 25s ease-in-out infinite;
+    bottom: 8%;
+    animation: flyDrone2 35s linear infinite;
   }
-  @keyframes floatDrone1 {
-    0%   { transform: translate(0, 0) rotate(0deg); }
-    25%  { transform: translate(120px, -50px) rotate(5deg); }
-    50%  { transform: translate(250px, 30px) rotate(-3deg); }
-    75%  { transform: translate(120px, -20px) rotate(4deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
+  @keyframes flyDrone1 {
+    0%   { left: -300px; transform: translateY(0) rotate(0deg); }
+    10%  { transform: translateY(-35px) rotate(4deg); }
+    25%  { transform: translateY(20px) rotate(-3deg); }
+    40%  { transform: translateY(-45px) rotate(5deg); }
+    55%  { transform: translateY(25px) rotate(-4deg); }
+    70%  { transform: translateY(-30px) rotate(3deg); }
+    85%  { transform: translateY(15px) rotate(-2deg); }
+    100% { left: calc(100vw + 100px); transform: translateY(0) rotate(0deg); }
   }
-  @keyframes floatDrone2 {
-    0%   { transform: translate(0, 0) rotate(0deg); }
-    25%  { transform: translate(-80px, -40px) rotate(-4deg); }
-    50%  { transform: translate(-180px, 20px) rotate(2deg); }
-    75%  { transform: translate(-80px, -30px) rotate(-3deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
+  @keyframes flyDrone2 {
+    0%   { left: calc(100vw + 100px); transform: translateY(0) rotate(0deg); }
+    10%  { transform: translateY(-25px) rotate(-4deg); }
+    25%  { transform: translateY(15px) rotate(2deg); }
+    40%  { transform: translateY(-35px) rotate(-5deg); }
+    55%  { transform: translateY(20px) rotate(3deg); }
+    70%  { transform: translateY(-20px) rotate(-2deg); }
+    85%  { transform: translateY(10px) rotate(1deg); }
+    100% { left: -250px; transform: translateY(0) rotate(0deg); }
   }
 
   /* ── NAV ── */
